@@ -1,0 +1,75 @@
+id,topic,title,content,step,example
+
+1,IT,Intro Komputer,Pengenalan komputer dan fungsi dasarnya,1,CPU sebagai otak
+2,IT,Hardware,Komponen fisik komputer,2,RAM GPU SSD
+3,IT,Software,Perbedaan software dan hardware,3,Windows Chrome
+4,IT,Sistem Operasi,Fungsi OS,4,Windows Linux
+5,IT,Jaringan Dasar,IP Address dan internet,5,192.168.1.1
+6,IT,Internet Cara Kerja,Data packet internet,6,Routing DNS
+7,IT,Database Intro,Pengenalan database,7,MySQL MongoDB
+
+8,Math,Aljabar,Variabel dasar,1,x + y = 5
+9,Math,Linear Equation,Persamaan linear,2,2x + 3 = 7
+10,Math,Quadratic,Persamaan kuadrat,3,x² + 5x + 6
+11,Math,Fungsi,Konsep fungsi,4,f(x)=x+2
+12,Math,Statistika,Mean median modus,5,data analisis
+13,Math,Probability,Peluang dasar,6,0.5 = 50%
+
+14,Science,Sel,Struktur sel,1,nukleus mitokondria
+15,Science,Genetika,DNA dan gen,2,hereditas
+16,Science,Energi,Perubahan energi,3,kinetik potensial
+17,Science,Ekosistem,Rantai makanan,4,produsen konsumen
+
+18,English,Grammar,Verb to be,1,am is are
+19,English,Tenses,Present tense,2,I go I am going
+20,English,Vocabulary,Kosa kata dasar,3,apple book car
+21,English,Reading,Comprehension text,4,understanding meaning
+
+22,History,Kolonial Indonesia,Penjajahan Belanda,1,VOC
+23,History,Perang Dunia,WW1 WW2,2,sejarah global
+24,History,Reformasi,1998 Indonesia,3,Soeharto
+
+25,Biology,Sel,Struktur sel hidup,1,DNA RNA
+26,Biology,Organ,Jantung paru,2,sistem tubuh
+27,Chemistry,Atom,Struktur atom,1,proton neutron
+28,Chemistry,Reaksi,Reaksi kimia dasar,2,combustion
+29,Chemistry,Asam Basa,pH scale,3,acid base
+
+30,Geology,Bumi,Batuan bumi,1,igneous sediment
+31,Geology,Gunung Api,Letusan vulkanik,2,volcano
+
+32,Arabic,Alphabet,Huruf hijaiyah,1,ا ب ت ث
+33,Arabic,Basic Word,Kata dasar Arab,2,salam kitab
+34,Arabic,Grammar Dasar,Nahwu sederhana,3,kalimat Arab
+
+35,Quran,Pengenalan Al-Quran,Sejarah mushaf,1,wahyu
+36,Quran,Tajwid Dasar,Hukum bacaan,2,ikhfa idgham
+37,Quran,Surah Pendek,Al-Fatihah,3,7 ayat
+
+38,French,Intro French,Pengenalan bahasa,1,bonjour
+39,French,Pronunciation,Cara baca,2,accent
+40,French,Grammar Dasar,Verb être avoir,3,je suis
+
+41,Spanish,Intro Spanish,Pengenalan bahasa,1,hola
+42,Spanish,Grammar,Verb dasar,2,ser estar
+43,Spanish,Vocabulary,Kata umum,3,agua comida
+
+44,English,Advanced Reading,Text comprehension,5,essay reading
+45,English,Writing,Menulis essay,6,paragraph structure
+46,English,Speaking,Conversation basic,7,dialog practice
+
+47,IT,Advanced Network,Subnetting,8,network class
+48,IT,Cybersecurity,Dasar keamanan,9,firewall hacking
+49,IT,Programming Intro,Logika coding,10,if else loop
+
+50,Math,Trigonometri,Sin cos tan,7,triangle formula
+51,Math,Geometry,Geometri bidang,8,area volume
+
+52,Science,Physics,Gerak Newton,5,f=ma
+53,Science,Chemistry Lanjut,Reaksi kompleks,6,equilibrium
+
+54,History,Dunia Modern,Cold war,4,USSR USA
+
+55,Biology,Genetics Lanjut,Mendel law,4,dominant recessive
+56,Chemistry,Organic,Kimia organik,4,carbon chain
+57,Geology,Earth Layers,Lapisan bumi,3,core mantle crust

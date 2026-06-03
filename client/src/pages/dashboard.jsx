@@ -1,9 +1,26 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
+import axios from 'axios';
+import StatsCard from '../components/StatsCard';
+
 
 export default function Dashboard() {
-  const [user, setUser] = useState(null);
+   const [user, setUser] = useState(null);
+  const [dashboardData, setDashboardData] =
+  useState({
+    progress: 0,
+    totalQuiz: 0,
+    avgScore: 0,
+    topicCount: 0,
+    latestTopics: [],
+  });
+
+  const token =
+  localStorage.getItem('token');
+
+
+  
   const navigate = useNavigate();
 
   const [accessibility, setAccessibility] = useState({
@@ -13,14 +30,34 @@ export default function Dashboard() {
     darkMode: false,
   });
 
-  useEffect(() => {
-    const savedUser = localStorage.getItem('user');
-    if (savedUser) {
-      setUser(JSON.parse(savedUser));
-    } else {
-      navigate('/');
-    }
-  }, [navigate]);
+useEffect(() => {
+  const savedUser = localStorage.getItem('user');
+
+  if (savedUser) {
+    setUser(JSON.parse(savedUser));
+  } else {
+    navigate('/');
+    return;
+  }
+
+  const token = localStorage.getItem('token');
+
+  if (token) {
+    axios
+      .get('http://localhost:5000/api/dashboard', {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => {
+        setDashboardData(res.data.data);
+      })
+      .catch((err) => {
+        console.error('Dashboard Error:', err);
+      });
+  }
+}, [navigate]);
+
 
   const handleLogout = () => {
     localStorage.clear();
@@ -31,17 +68,29 @@ export default function Dashboard() {
     setAccessibility((prev) => ({ ...prev, [key]: !prev[key] }));
   };
 
-  const stats = [
-    { label: 'Modul Selesai', value: '13', sub: 'dari 30 modul', icon: '📘' },
-    { label: 'Kuis Dikerjakan', value: '25', sub: 'dari 30 kuis', icon: '📝' },
-    { label: 'Streak Belajar', value: '90%', sub: 'Bagus Sekali!', icon: '📈' },
-  ];
+const stats = [
+  {
+    label: 'Topik Dipelajari',
+    value: dashboardData.topicCount,
+    sub: 'Topik unik',
+    icon: '📘',
+  },
+  {
+    label: 'Kuis Dikerjakan',
+    value: dashboardData.totalQuiz,
+    sub: 'Total kuis',
+    icon: '📝',
+  },
+  {
+    label: 'Rata-rata Nilai',
+    value: dashboardData.avgScore,
+    sub: 'Hasil belajar',
+    icon: '📈',
+  },
+];
+const topikAktif =
+  dashboardData.latestTopics;
 
-  const topikAktif = [
-    { nama: 'Dasar Pemrograman Python', persen: 70 },
-    { nama: 'Struktur Data', persen: 50 },
-    { nama: 'Algoritma Dasar', persen: 30 },
-  ];
 
   const accessibilityOptions = [
     { key: 'tts', icon: '🔊', label: 'Teks ke Suara', desc: 'Dengarkan materi dengan audio' },
@@ -105,7 +154,7 @@ export default function Dashboard() {
                   <circle
                     cx="55" cy="55" r="45" fill="none"
                     stroke="#6366f1" strokeWidth="14"
-                    strokeDasharray={`${2 * Math.PI * 45 * 0.43} ${2 * Math.PI * 45}`}
+                    strokeDasharray={`${2 * Math.PI * 45 * dashboardData.progress / 100} ${2 * Math.PI * 45}`}
                     strokeLinecap="round"
                     transform="rotate(-90 55 55)"
                   />
@@ -114,7 +163,7 @@ export default function Dashboard() {
                   position: 'absolute', top: '50%', left: '50%',
                   transform: 'translate(-50%, -50%)',
                   fontWeight: '700', fontSize: '18px', color: '#6366f1'
-                }}>43%</div>
+                }}>{dashboardData.progress}%</div>
               </div>
 
               {/* Legend */}
@@ -136,13 +185,13 @@ export default function Dashboard() {
           {/* Stats Cards */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
             {stats.map((s) => (
-              <Card key={s.label}>
-                <div style={{ fontSize: '22px', marginBottom: '8px' }}>{s.icon}</div>
-                <div style={{ fontSize: '13px', color: '#64748b', marginBottom: '6px' }}>{s.label}</div>
-                <div style={{ fontSize: '26px', fontWeight: '700', color: '#1e293b' }}>{s.value}</div>
-                <div style={{ fontSize: '12px', color: '#94a3b8', marginTop: '4px' }}>{s.sub}</div>
-              </Card>
-            ))}
+<StatsCard
+  key={s.label}
+  icon={s.icon}
+  label={s.label}
+  value={s.value}
+  sub={s.sub}
+/>            ))}
           </div>
         </div>
 

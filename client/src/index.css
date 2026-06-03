@@ -124,3 +124,27 @@ body,
   background: #f8f9fc;
   font-family: 'Poppins', sans-serif;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  min-height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background: #f5f7fb;
+}
+
+/* FIX TEXT ANEH */
+h1,h2,h3,h4,p,span,button {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* biar ga abu pudar */
+p { color: #334155; }
+h1,h2,h3 { color: #0f172a; }

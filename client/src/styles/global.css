@@ -23,3 +23,60 @@ a {
 button {
   font-family: inherit;
 }
+body {
+  background: #f5f7fb;
+  color: #0f172a; /* 🔥 teks utama gelap jelas */
+  font-family: 'Poppins', sans-serif;
+}
+
+/* semua teks default biar gak abu terlalu muda */
+p {
+  color: #334155;
+}
+
+h1, h2, h3, h4 {
+  color: #0f172a;
+}
+
+/* input biar gak “pudar” */
+input, textarea {
+  color: #0f172a;
+  background: #ffffff;
+}
+
+/* placeholder biar gak nyaru */
+input::placeholder,
+textarea::placeholder {
+  color: #94a3b8;
+}
+
+/* button text always clear */
+button {
+  color: inherit;
+}
+
+body.dark {
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+body.dark .card {
+  background: #1e293b !important;
+  color: #e2e8f0 !important;
+}
+
+body.dark input,
+body.dark textarea {
+  background: #1e293b;
+  color: #e2e8f0;
+  border-color: #334155;
+}
+
+body.dark button {
+  color: white;
+}
+
+body.dark {
+  background: #0b1220;
+  color: white;
+}
