@@ -23,7 +23,7 @@ export default function Rekomendasi() {
     setSkor(skorParam);
     setTopik(topikParam);
 
-    fetch(`http://localhost:5000/api/recommendation?skor=${skorParam}&topic=${topikParam}`)
+    fetch(`https://carefree-balance-production-20cb.up.railway.app/api/recommendation?skor=${skorParam}&topic=${topikParam}`)
       .then((r) => r.json())
       .then((res) => {
         if (res.success) {

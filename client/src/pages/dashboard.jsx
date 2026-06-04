@@ -44,7 +44,7 @@ useEffect(() => {
 
   if (token) {
     axios
-      .get('http://localhost:5000/api/dashboard', {
+      .get('https://carefree-balance-production-20cb.up.railway.app/api/dashboard', {
         headers: {
           Authorization: `Bearer ${token}`,
         },

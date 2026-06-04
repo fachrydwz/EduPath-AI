@@ -10,7 +10,7 @@ export default function Pencapaian() {
 
     axios
       .get(
-        'http://localhost:5000/api/pencapaian',
+        'https://carefree-balance-production-20cb.up.railway.app/api/pencapaian',
         {
           headers: {
             Authorization: `Bearer ${token}`,
