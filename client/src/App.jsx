@@ -1,13 +1,13 @@
 import { Routes, Route } from 'react-router-dom';
 
-import Login from './pages/Login';
-import Register from './pages/Register';
-import Dashboard from './pages/Dashboard';
-import Modul from './pages/Modul';
+import Login from './pages/login';
+import Register from './pages/register';
+import Dashboard from './pages/dashboard';
+import Modul from './pages/modul';
 import ModulDetail from './pages/ModulDetail';
-import Kuis from './pages/Kuis';
-import Rekomendasi from './pages/Rekomendasi';
-import Riwayat from './pages/Riwayat';
+import Kuis from './pages/kuis';
+import Rekomendasi from './pages/rekomendasi';
+import Riwayat from './pages/riwayat';
 import Pencapaian from './pages/Pencapaian';
 import Catatan from './pages/Catatan';
 import Pengaturan from './pages/Pengaturan';
