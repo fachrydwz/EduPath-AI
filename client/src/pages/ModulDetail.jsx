@@ -13,7 +13,7 @@ export default function ModulDetail() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/modul-detail/${topic}`)
+      .get(`${import.meta.env.VITE_API_URL || 'http://localhost:5000/api'}/modul-detail/${topic}`)
       .then((res) => setData(res.data.data))
       .catch(console.error)
       .finally(() => setLoading(false));

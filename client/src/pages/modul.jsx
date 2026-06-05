@@ -13,7 +13,7 @@ export default function Modul() {
     const user = localStorage.getItem('user');
     if (!user) { navigate('/'); return; }
 
-    fetch('http://localhost:5000/api/modul')
+    fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000/api'}/modul`)
       .then((r) => r.json())
       .then((res) => {
         if (res.success) setModuls(res.data);

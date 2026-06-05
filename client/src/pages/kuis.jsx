@@ -19,7 +19,7 @@ export default function Kuis() {
     const user = localStorage.getItem('user');
     if (!user) { navigate('/'); return; }
 
-    fetch('http://localhost:5000/api/modul')
+    fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000/api'}/modul`)
       .then((r) => r.json())
       .then((res) => { if (res.success) setTopikList(res.data); })
       .catch(console.error);
@@ -28,7 +28,7 @@ export default function Kuis() {
   useEffect(() => {
     if (topikDipilih && step === 'kuis') {
       setLoading(true);
-      fetch(`http://localhost:5000/api/quiz/${topikDipilih}`)
+      fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000/api'}/quiz/${topikDipilih}`)
         .then((r) => r.json())
         .then((res) => {
           if (res.success) { setSoal(res.data); setJawaban({}); setCurrent(0); }
@@ -62,7 +62,7 @@ export default function Kuis() {
     }));
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch('http://localhost:5000/api/quiz/submit', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000/api'}/quiz/submit`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
