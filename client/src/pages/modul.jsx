@@ -13,7 +13,7 @@ export default function Modul() {
     const user = localStorage.getItem('user');
     if (!user) { navigate('/'); return; }
 
-    fetch('https://carefree-balance-production-20cb.up.railway.app/api/modul')
+    fetch('http://localhost:5000/api/modul')
       .then((r) => r.json())
       .then((res) => {
         if (res.success) setModuls(res.data);

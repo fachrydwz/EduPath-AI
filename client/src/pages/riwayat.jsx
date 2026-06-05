@@ -21,7 +21,7 @@ export default function Riwayat() {
     setLoading(true);
     const token = localStorage.getItem('token');
 
-    fetch('https://carefree-balance-production-20cb.up.railway.app/api/riwayat', {
+    fetch('http://localhost:5000/api/riwayat', {
       headers: { 
         Authorization: `Bearer ${token}` 
       },
@@ -79,7 +79,7 @@ export default function Riwayat() {
   const handleHapus = async (id) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`https://carefree-balance-production-20cb.up.railway.app/api/riwayat/${id}`, {
+      const response = await fetch(`http://localhost:5000/api/riwayat/${id}`, {
         method: 'DELETE',
         headers: { 
           Authorization: `Bearer ${token}` 

@@ -1,4 +1,4 @@
-const BASE_URL = 'https://carefree-balance-production-20cb.up.railway.app/api';
+const BASE_URL = 'http://localhost:5000/api';
 
 export async function loginUser(data) {
   const response = await fetch(`${BASE_URL}/auth/login`, {
