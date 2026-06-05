@@ -44,7 +44,7 @@ useEffect(() => {
 
   if (token) {
     axios
-      .get('http://localhost:5000/api/dashboard', {
+      .get(`${import.meta.env.VITE_API_URL || 'http://localhost:5000/api'}/dashboard`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

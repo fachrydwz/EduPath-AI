@@ -15,7 +15,7 @@ export default function Catatan() {
   const fetchNotes = async () => {
     try {
       const res = await axios.get(
-        'http://localhost:5000/api/catatan',
+        `${import.meta.env.VITE_API_URL || 'http://localhost:5000/api'}/catatan`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -42,7 +42,7 @@ export default function Catatan() {
     try {
       if (editingId) {
         await axios.put(
-          `http://localhost:5000/api/catatan/${editingId}`,
+          `${import.meta.env.VITE_API_URL || 'http://localhost:5000/api'}/catatan/${editingId}`,
           {
             title,
             content,
@@ -55,7 +55,7 @@ export default function Catatan() {
         );
       } else {
         await axios.post(
-          'http://localhost:5000/api/catatan',
+          `${import.meta.env.VITE_API_URL || 'http://localhost:5000/api'}/catatan`,
           {
             title,
             content,
@@ -94,7 +94,7 @@ export default function Catatan() {
 
     try {
       await axios.delete(
-        `http://localhost:5000/api/catatan/${id}`,
+        `${import.meta.env.VITE_API_URL || 'http://localhost:5000/api'}/catatan/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

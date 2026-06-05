@@ -13,7 +13,7 @@ export default function Pengaturan() {
 
   useEffect(() => {
     axios
-      .get('http://localhost:5000/api/user/profile', {
+      .get(`${import.meta.env.VITE_API_URL || 'http://localhost:5000/api'}/user/profile`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
@@ -32,7 +32,7 @@ export default function Pengaturan() {
 
   const handleSave = async () => {
     await axios.put(
-      'http://localhost:5000/api/user/profile',
+      `${import.meta.env.VITE_API_URL || 'http://localhost:5000/api'}/user/profile`,
       form,
       {
         headers: { Authorization: `Bearer ${token}` },
